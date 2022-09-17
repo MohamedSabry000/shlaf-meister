@@ -33,7 +33,7 @@ function FeaturedProducts() {
                   </div>
                 </Grid>
                 <Grid item xs={12} md={6}>
-                  <div style={{backgroundColor: '#F26522', width: '75%', height: '100%', position: 'relative', marginLeft: '15%'}}>
+                  <div style={{backgroundColor: '#F26522', width: '66%', height: '100%', position: 'relative', marginLeft: '15%'}}>
                     <img
                       src={`http://demos-iconcreations.com/schlafmiestrback${product.product_photos[0].photo_path}`}
                       alt={product.title_english}

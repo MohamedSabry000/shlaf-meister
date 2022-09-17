@@ -17,7 +17,6 @@ function Home() {
       <FeaturedProducts />
       <Separator />
       <OurOffers />
-      <Separator />
       <Footer />
 
 
