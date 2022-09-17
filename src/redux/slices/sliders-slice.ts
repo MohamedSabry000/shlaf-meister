@@ -1,22 +1,23 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { getDataFromAPI } from '../../utils/getDataFromAPI';
+import { ISlider } from '../Interfaces';
 
 export const getSliderFromAPI = createAsyncThunk(
-  'videos/getVideos', async () => { return await getDataFromAPI("sliders"); }
+  'videos/getSlides', async () => { return await getDataFromAPI("sliders"); }
 );
 
 const initialState = {
-  sliders: [],
-  isLoading: false,
-  isSuccess: false,
-  isError: false,
+  sliders: [] as ISlider[],
+  isLoading: false as boolean,
+  isSuccess: false as boolean,
+  isError: false as boolean,
 };
 
 const slidersSlice = createSlice({
   name: 'sliders',
   initialState,
   reducers: {
-    reset(state) {
+    resetSliders(state: any) {
       state.sliders = [];
       state.isLoading = false;
       state.isSuccess = false;
@@ -24,21 +25,20 @@ const slidersSlice = createSlice({
     },
   },
   extraReducers: {
-    // getVideosFromAPI
-    [getSliderFromAPI.pending]: (state, action) => {
+    [getSliderFromAPI.pending as any]: (state: any) => {
       state.isLoading = true;
     },
-    [getSliderFromAPI.fulfilled]: (state, action) => {
+    [getSliderFromAPI.fulfilled as any]: (state: any, action: any) => {
       state.isLoading = false;
       state.isSuccess = true;
-      state.videos = action.payload;
+      state.sliders = action.payload.message.sliders;
     },
-    [getSliderFromAPI.rejected]: (state, action) => {
+    [getSliderFromAPI.rejected as any]: (state: any) => {
       state.isLoading = false;
       state.isError = true;
     },
   },
 });
 
-export const { reset } = slidersSlice.actions;
+export const { resetSliders } = slidersSlice.actions;
 export default slidersSlice.reducer;

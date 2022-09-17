@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +13,94 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+ul.dash {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 1em;
+}
+ul.dash > li:before {
+  display: inline-block;
+  content: "-";
+  width: 1em;
+  margin-left: -1em;
+}
+
+#president-message {
+  width: 100%;
+  padding: 5%;
+}
+
+#president-message img{
+  object-fit: contain;
+  width: 100%;
+  padding: 5px;
+  border-radius: 30px;
+  border: 1px solid #112857;
+  padding-bottom: 0;
+}
+
+#president-message .content {
+  margin: 31px 0px;
+  padding: 16px 39px;
+  background-color: #112857;
+  background-color: linear-gradient(180deg, #112857 0%, #0A1934 100%);
+  border-radius: 0 28px 28px 0;
+  color: #FFF;
+}
+
+#president-message .content p {
+  font-size: 19px;
+  margin: 0;
+}
+
+#president-message .content ul {
+  font-size: 14px
+}
+
+#mission-vision .content {
+  padding: 0 75px
+}
+
+#mission-vision .content img {
+  object-fit: contain;
+  width: 72%;
+}
+
+#mission-vision .content .paragraph {
+  margin-left: -47px;
+  font-size: 14px;
+}
+
+.offer {
+
+}
+@media screen and (max-width: 1200px) {
+  .offer.css-1oqqzyl-MuiContainer-root {
+    width: 100% !important;
+  }
+}
+
+#footer {
+  background-color: #112857;
+  color: #FFF;
+  padding: 20px 0;
+  text-align: center;
+}
+
+#footer .input-group {
+  width: 100%;
+  background-color: #98a2b7;
+}
+
+#footer .input-group input{
+  padding: 5px;
+}
+
+#footer .input-group button {
+  background-color: #FFF;
+  color: #0A1934;
+  border: none;
+  padding: 5px 10px;
 }
