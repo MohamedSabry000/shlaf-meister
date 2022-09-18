@@ -2,7 +2,7 @@ import {useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import SectionTitle from './SectionTitle'
 import { getMissionVisionFromAPI } from '../redux/slices/mission-vision-slice'
-import { Container, Grid } from '@mui/material'
+import { Alert, CircularProgress, Container, Grid } from '@mui/material'
 import { IMissionVision } from '../redux/Interfaces'
 
 
@@ -23,7 +23,9 @@ function MissionVision() {
   return (
     <div id="mission-vision">
       <SectionTitle title="Mission & Vision" />
-      {isLoading? <div>Loading</div> : isError? <div>Error</div> : isSuccess && (
+      {isLoading?
+          <div className="flex-center"><CircularProgress /></div>
+          : isError? <Alert severity="error">Error</Alert> : isSuccess && (
         <Container>
           <Grid container columnSpacing={0}>
             <Grid item sm={12} md={4}>

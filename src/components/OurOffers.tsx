@@ -2,7 +2,7 @@ import {useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import SectionTitle from './SectionTitle'
 import { getOffersFromAPI } from '../redux/slices/offers-slice'
-import { Alert, Button, Container, Grid } from '@mui/material'
+import { Alert, Button, CircularProgress, Container, Grid } from '@mui/material'
 import { IOffer } from '../redux/Interfaces'
 import Separator from './Separator'
 
@@ -14,7 +14,9 @@ function OurOffers() {
     dispatch(getOffersFromAPI() as any)
   }, [dispatch])
 
-  return isLoading? <div>Loading</div> : isError? <Alert severity="error">Error</Alert> : isSuccess &&
+  return isLoading?
+  <div className="flex-center"><CircularProgress /></div>
+  : isError? <Alert severity="error">Error</Alert> : isSuccess &&
     offers.map((offer: IOffer) => (
       <Container
         className="offer"

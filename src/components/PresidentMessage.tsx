@@ -4,6 +4,7 @@ import { getPresidentMessageFromAPI } from '../redux/slices/president-message-sl
 import SectionTitle from './SectionTitle'
 import Message from './Message'
 import { getVicePresidentMessageFromAPI } from '../redux/slices/vice-president-slice'
+import { Alert, CircularProgress } from '@mui/material'
 
 
 function PresidentMessage() {
@@ -19,10 +20,14 @@ function PresidentMessage() {
   return (
     <div id="president-message">
       <SectionTitle title="Message from the president & Vice president  " />
-      {isLoading? <div>Loading</div> : isError? <div>Error</div> : isSuccess &&
+      {isLoading?
+          <div className="flex-center"><CircularProgress /></div>
+          : isError? <Alert severity="error">Error</Alert> : isSuccess &&
         <Message message={presidentMessage} direction="left" />
       }
-      {isViceLoading? <div>Loading</div> : isViceError? <div>Error</div> : isViceSuccess &&
+      {isViceLoading?
+          <div className="flex-center"><CircularProgress /></div>
+          : isViceError? <Alert severity="error">Error</Alert> : isViceSuccess &&
         <Message message={vicePresident} direction="right" />
       }
     </div>

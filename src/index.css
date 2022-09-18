@@ -18,6 +18,7 @@ code {
 .m-2 {
   margin: 0 2px !important;
 }
+.p-0 { padding: 0 !important; }
 .pb-0 {padding-bottom: 0 !important;}
 .pb-10 {padding-bottom: 10px !important;}
 .mt-10 { margin-top: 10px;}
@@ -179,4 +180,108 @@ ul.dash > li:before {
   .offer.css-1oqqzyl-MuiContainer-root {
       max-width: none !important;
   }
+}
+
+.card-title {
+  text-align: center;
+  border-bottom: 1px solid #707070;
+  padding: 9px;
+  font-size: 15px !important;
+  color: #14325C;
+  font-weight: bold !important;
+}
+
+.card-description {
+  padding: 0 15px;
+}
+
+.card-desc-title-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 9px 0;
+  font-size: 14px;
+}
+
+.card-desc-list {
+  list-style: '- ';
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+}
+
+.card-desc-list-item {
+  margin: 5px 0;
+}
+
+#our-products {
+  padding-bottom: 0;
+}
+
+#product-types button.add-to-cart {
+  padding: 7px 15px !important;
+  background-color: #F26522 !important;
+  color: #FFF !important;
+}
+
+#our-products button.add-to-cart {
+  padding: 7px 15px !important;
+  background-color: #F26522 !important;
+  color: #FFF !important;
+}
+
+#product-types button.more-details {
+  padding: 7px 15px !important;
+  background-color: #FFF !important;
+  color: #F26522 !important;
+  border: 1px solid #F26522 !important;
+}
+
+#our-products button.more-details {
+  padding: 7px 15px !important;
+  background-color: #FFF !important;
+  color: #F26522 !important;
+  border: 1px solid #F26522 !important;
+}
+
+#product-types .swiper-button-next, #product-types .swiper-button-prev {
+  border: 1px solid #CCC;
+  width: 40px;
+  height: 40px;
+  background: #FFF;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
+}
+
+#our-products .swiper-button-next, #our-products .swiper-button-prev {
+  width: 32px;
+  height: 73px;
+  background: #f26522;
+  box-shadow: 0 2px 4px 0 rgb(0 0 0 / 50%);
+}
+
+#product-types .swiper-button-next::after, #product-types .swiper-button-prev::after {
+  font-size: 10px;
+  color: #F26522;
+  margin-right: -3px;
+  padding: 0;
+}
+
+#our-products .swiper-button-next::after, #our-products .swiper-button-prev::after {
+  font-size: 13px;
+  margin-right: -3px;
+  padding: 0;
+  color: #FFF;
+}
+
+#product-types .swiper-button-prev::after {
+  margin-right: 3px;
+}
+
+#our-products .swiper-button-prev::after {
+  margin-right: 3px;
+}
+
+.swiper-pointer-events {
+  padding: 5px 0;
 }

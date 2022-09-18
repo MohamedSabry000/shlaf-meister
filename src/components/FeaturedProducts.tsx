@@ -1,11 +1,10 @@
-import { Grid } from '@mui/material';
+import { Alert, CircularProgress, Grid } from '@mui/material';
 import { Container } from '@mui/system';
-import React, { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { IProduct } from '../redux/Interfaces';
 import { getFeaturedProductsFromAPI } from '../redux/slices/featured-products-slice';
 import SectionTitle from './SectionTitle';
-
 
 function FeaturedProducts() {
   const dispatch = useDispatch()
@@ -18,9 +17,11 @@ function FeaturedProducts() {
 
   const renderParagraphs = (text: string) => text.split('\n').map((paragraph: string, index: number) => <p key={index}>{paragraph}</p>)
   return (
-    <div style={{width: '100%', padding: "5%", backgroundColor: '#F9F9F9'}}>
+    <div style={{width: '100%', padding: "0 5%", backgroundColor: '#F9F9F9'}}>
       <SectionTitle title="Featured Products" />
-      {isLoading? <div>Loading</div> : isError? <div>Error</div> : isSuccess && (
+      {isLoading?
+        <div className="flex-center"><CircularProgress /></div>
+        : isError? <Alert severity="error">Error</Alert> : isSuccess && (
         <Container>
           {
             featuredProducts?.map((product: IProduct) => (
@@ -39,7 +40,7 @@ function FeaturedProducts() {
                       alt={product.title_english}
                       style={{
                         height: '100%',
-                        objectFit: 'contain',
+                        objectFit: 'cover',
                         width: '100%',
                         position: 'absolute',
                         left: '-15px',

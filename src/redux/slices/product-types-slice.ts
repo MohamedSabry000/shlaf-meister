@@ -7,7 +7,7 @@ export const getProductTypesFromAPI = createAsyncThunk(
 );
 
 const initialState = {
-  ProductTypes: [] as IProductType[],
+  productTypes: [] as IProductType[],
   isLoading: false as boolean,
   isSuccess: false as boolean,
   isError: false as boolean,

@@ -1,21 +1,17 @@
 import { Box } from '@mui/material';
-import { Sliders, Separator, ProductTypes, PresidentMessage, MissionVision, FeaturedProducts, OurOffers, Footer } from '../components'
+import { Sliders, Separator, ProductTypes, PresidentMessage, MissionVision, FeaturedProducts, OurOffers, Footer, OurProducts } from '../components'
 
 function Home() {
   return (
     <Box>
       <Sliders />
-      <Separator />
-      {/* <ProductTypes /> */}
-      <Separator />
+      <ProductTypes />
       <PresidentMessage />
-      <Separator />
       <MissionVision />
       <Separator />
-      {/* <OurProducts /> */}
+      <OurProducts />
       <Separator />
       <FeaturedProducts />
-      <Separator />
       <OurOffers />
       <Footer />
 

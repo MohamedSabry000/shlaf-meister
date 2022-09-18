@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Carousel from 'react-material-ui-carousel'
-import { Paper, Button } from '@mui/material'
+import { Paper, Button, CircularProgress, Alert } from '@mui/material'
 import { ISlider } from '../redux/Interfaces'
 import { getSliderFromAPI } from '../redux/slices/sliders-slice'
 
@@ -13,7 +13,9 @@ function Sliders() {
     dispatch(getSliderFromAPI() as any)
   }, [dispatch])
 
-  return isLoading? <div>Loading</div> : isError? <div>Error</div> : isSuccess && (
+  return isLoading?
+    <div className="flex-center"><CircularProgress /></div>
+    : isError? <Alert severity="error">Error</Alert> : isSuccess && (
     <Carousel
       autoPlay={false}
       animation="slide"
