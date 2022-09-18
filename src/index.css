@@ -23,13 +23,24 @@ code {
 .mt-10 { margin-top: 10px;}
 
 .flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+#navbar {
+  background-color: #FFF;
+  padding-top: 15px;
 }
 
 #navbar .nav-links {
- color: #2E4765
+  align-self: flex-end
+}
+#navbar .nav-links button {
+ color: #2E4765 !important;
+ margin-bottom: 0;
+ border-radius: 0;
+ font-size: 12px;
 }
 
 #navbar .nav-links ul {
@@ -44,7 +55,7 @@ code {
   cursor: pointer;
 }
 
-#navbar .nav-links ul li.active {
+#navbar .nav-links button.active {
   border-bottom: 3px solid #F26522;
 }
 
@@ -59,7 +70,7 @@ code {
 .search-bar {
   border: none;
   outline: none;
-  width: 150px;
+  width: 79%;
 }
 
 ul.dash {
